@@ -25,4 +25,3 @@ lemma trivial_edges_zero (n : Nat) : (trivialConfig n).edges = 0 := by
   rfl
 
 end URF
-

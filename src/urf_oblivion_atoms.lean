@@ -58,4 +58,3 @@ def Expander_to_gadget (exp : CycleExpander) : HypergraphGadget :=
   { vertices := exp.nodes, edges := exp.edges, maxDegree := 4, cycles := exp.cycles }
 
 end URF
-

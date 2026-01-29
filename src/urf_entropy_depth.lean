@@ -57,4 +57,3 @@ def computeED (cfgs : List FOkConfig) : Nat :=
   cfgs.foldl (fun acc cfg => acc + cfg.nodes + cfg.edges) 0
 
 end URF
-
