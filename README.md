@@ -1,49 +1,23 @@
-# Unified Rigidity Framework (URF) — Experimental Fork
+## Release / Versioned Snapshot
 
-This repository contains an **independent fork of Lean’s `mathlib4`** with a modular framework for experimenting with FOᵏ configurations, cycle expanders, entropy-depth invariants, and hypergraph gadgets.
+This fork contains a self-contained URF experimental library.
+For reference or reproducibility, the **release branch** corresponding to commit `0b347bd13b2c437b377ed3f3e8b7800a1f385ab6` is:
 
-All modules are authored by **Inacio F. Vasquez** and form a **self-contained URF experiment library**.
+**Branch:** [`urf-release-0b347b`](https://github.com/inaciovasquez2020/mathlib4/tree/urf-release-0b347b)
 
----
-python3 -m pip install --user pre-commit
-export PATH="$HOME/Library/Python/3.9/bin:$PATH"  # adjust for your Python version
-pre-commit install
-Branch
-urf-experiment — contains all URF modules and experimental work
-Modules
-File	Description
-src/urf_base.lean	Core FOᵏ structures (FOkConfig) and typeclasses (ConfigOps)
-src/urf_config.lean	Configuration generators, trivial examples, ConfigOps instances
-src/urf_lemmas.lean	Basic lemmas for configurations (edges, nodes)
-src/urf_experiments.lean	Experimental functions (growConfig, doubleEdges)
-src/urf_cycle_expanders.lean	Cycle-expander gadgets, trivial expanders, FOᵏ conversions
-src/urf_entropy_depth.lean	EntropyDepth structure, ED(F) computations, addConfig/addExpander
-src/urf_oblivion_atoms.lean	Hypergraph gadget structures, trivial gadgets, conversions
-src/urf_experiments_utils.lean	Utilities for configs: repeatConfig, totalNodes, totalEdges, mergeED
-src/urf_cycle_rigidity.lean	FOᵏ local rigidity predicates, gadget rigidity lemmas
-src/urf_random_collision_utils.lean	Random FOᵏ config generator, collision counting, type-diversity
-Building and Verification
-lake build
-Compiles all URF modules.
-Verified Lean 4 build, no errors.
-Pre-commit hooks can automatically fix formatting issues.
-License & IP
-All URF modules are original work by Inacio F. Vasquez.
-Using mathlib4 as a dependency does not affect ownership.
-This fork is proprietary / experimental, suitable for research, testing, or further development.
-Contact
-Author: Inacio F. Vasquez
-GitHub: inaciovasquez2020
-Email: inacio@vasquezresearch.com
-## **Getting Started**
+- This branch represents a stable snapshot of all URF modules:
+  - `src/urf_base.lean`
+  - `src/urf_config.lean`
+  - `src/urf_lemmas.lean`
+  - `src/urf_experiments.lean`
+  - `src/urf_cycle_expanders.lean`
+  - `src/urf_entropy_depth.lean`
+  - `src/urf_oblivion_atoms.lean`
+  - `src/urf_experiments_utils.lean`
+  - `src/urf_cycle_rigidity.lean`
+  - `src/urf_random_collision_utils.lean`
 
-### Prerequisites
-- Lean 4 (tested with v4.28.0-rc1)
-- Lake build system
-- Optional: `pre-commit` hooks for formatting checks
+- Verified Lean 4 build (`lake build`)
+- Pre-commit formatting and end-of-file fixes applied
 
-### Clone & Setup
-```bash
-git clone https://github.com/inaciovasquez2020/mathlib4.git
-cd mathlib4
-lake build
+> Use this branch if you want a **stable, reproducible URF fork** for experimentation, research, or reference.
