@@ -333,10 +333,8 @@ local notation "μ_𝓕" => Measure.map (@QuotientGroup.mk G _ Γ) (μ.restrict 
 
 /-- The `essSup` of a function `g` on the quotient space `G ⧸ Γ` with respect to the pushforward
   of the restriction, `μ_𝓕`, of a right-invariant measure `μ` to a fundamental domain `𝓕`, is the
-  same as the `essSup` of `g`'s lift to the universal cover `G` with respect to `μ`. -/
 @[to_additive /-- The `essSup` of a function `g` on the additive quotient space `G ⧸ Γ` with respect
   to the pushforward of the restriction, `μ_𝓕`, of a right-invariant measure `μ` to a fundamental
-  domain `𝓕`, is the same as the `essSup` of `g`'s lift to the universal cover `G` with respect
   to `μ`. -/]
 lemma essSup_comp_quotientGroup_mk [μ.IsMulRightInvariant] {g : G ⧸ Γ → ℝ≥0∞}
     (g_ae_measurable : AEMeasurable g μ_𝓕) : essSup g μ_𝓕 = essSup (fun (x : G) ↦ g x) μ := by

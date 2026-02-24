@@ -27,7 +27,6 @@ Several variants are provided, given `f : Arrow C`:
 
 We end the file with a description of the Čech nerve of an arrow `X ⟶ ⊤_ C` to a terminal
 object, when `C` has finite products. We call this `cechNerveTerminalFrom`. When `C` is
-`G`-Set this gives us `EG` (the universal cover of the classifying space of `G`) as a simplicial
 `G`-set, which is useful for group cohomology.
 
 -/
@@ -379,7 +378,6 @@ lemma wideCospan.limitIsoPi_hom_comp_pi [Finite ι] (X : C) (j : ι) :
 
 /-- Given an object `X : C`, the Čech nerve of the hom to the terminal object `X ⟶ ⊤_ C` is
 naturally isomorphic to a simplicial object sending `⦋n⦌` to `Xⁿ⁺¹` (when `C` is `G-Set`, this is
-`EG`, the universal cover of the classifying space of `G`). -/
 def iso (X : C) : (Arrow.mk (terminal.from X)).cechNerve ≅ cechNerveTerminalFrom X :=
   NatIso.ofComponents (fun _ => wideCospan.limitIsoPi _ _) (fun {m n} f => by
     dsimp only [cechNerveTerminalFrom, Arrow.cechNerve]

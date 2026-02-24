@@ -22,7 +22,6 @@ representation, and differential defined by `(g₀, ..., gₙ) ↦ ∑ (-1)ⁱ �
 
 We define this as the alternating face map complex associated to an appropriate simplicial
 `k`-linear `G`-representation. This simplicial object is the `linearization` of the simplicial
-`G`-set given by the universal cover of the classifying space of `G`, `EG`. We prove this
 simplicial `G`-set `EG` is isomorphic to the Čech nerve of the natural arrow of `G`-sets
 `G ⟶ {pt}`.
 
@@ -97,7 +96,6 @@ open CategoryTheory.Limits
 variable [Monoid G]
 
 /-- When the category is `G`-Set, `cechNerveTerminalFrom` of `G` with the left regular action is
-isomorphic to `EG`, the universal cover of the classifying space of `G` as a simplicial `G`-set. -/
 def cechNerveTerminalFromIso :
     cechNerveTerminalFrom (Action.ofMulAction G G) ≅ classifyingSpaceUniversalCover G :=
   NatIso.ofComponents (fun _ => limit.isoLimitCone (Action.ofMulActionLimitCone _ _)) fun f => by
@@ -117,7 +115,6 @@ variable (k)
 
 open AlgebraicTopology SimplicialObject.Augmented SimplicialObject CategoryTheory.Arrow
 
-/-- The universal cover of the classifying space of `G` as a simplicial set, augmented by the map
 from `Fin 1 → G` to the terminal object in `Type u`. -/
 def compForgetAugmented : SimplicialObject.Augmented (Type u) :=
   SimplicialObject.augment (classifyingSpaceUniversalCover G ⋙ forget _) (terminal _)
@@ -131,7 +128,6 @@ def extraDegeneracyAugmentedCechNerve :
     ⟨fun _ => (1 : G),
       @Subsingleton.elim _ (@Unique.instSubsingleton _ (Limits.uniqueToTerminal _)) _ _⟩
 
-/-- The universal cover of the classifying space of `G` as a simplicial set, augmented by the map
 from `Fin 1 → G` to the terminal object in `Type u`, has an extra degeneracy. -/
 def extraDegeneracyCompForgetAugmented : ExtraDegeneracy (compForgetAugmented G) := by
   refine
@@ -141,13 +137,11 @@ def extraDegeneracyCompForgetAugmented : ExtraDegeneracy (compForgetAugmented G)
     Comma.isoMk (CechNerveTerminalFrom.iso G ≪≫ cechNerveTerminalFromIsoCompForget G)
       (Iso.refl _) (by ext : 1; exact IsTerminal.hom_ext terminalIsTerminal _ _)
 
-/-- The free functor `Type u ⥤ ModuleCat.{u} k` applied to the universal cover of the classifying
 space of `G` as a simplicial set, augmented by the map from `Fin 1 → G` to the terminal object
 in `Type u`. -/
 def compForgetAugmented.toModule : SimplicialObject.Augmented (ModuleCat.{u} k) :=
   ((SimplicialObject.Augmented.whiskering _ _).obj (ModuleCat.free k)).obj (compForgetAugmented G)
 
-/-- If we augment the universal cover of the classifying space of `G` as a simplicial set by the
 map from `Fin 1 → G` to the terminal object in `Type u`, then apply the free functor
 `Type u ⥤ ModuleCat.{u} k`, the resulting augmented simplicial `k`-module has an extra
 degeneracy. -/
@@ -212,7 +206,6 @@ section Exactness
 def forget₂ToModuleCat :=
   ((forget₂ (Rep k G) (ModuleCat.{u} k)).mapHomologicalComplex _).obj (standardComplex k G)
 
-/-- If we apply the free functor `Type u ⥤ ModuleCat.{u} k` to the universal cover of the
 classifying space of `G` as a simplicial set, then take the alternating face map complex, the result
 is isomorphic to the standard resolution of the trivial `G`-representation `k` as a complex of
 `k`-modules. -/
